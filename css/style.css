@@ -31,6 +31,35 @@
   font-weight: 700;
 }
 
+.link-animation {
+  position: relative;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 700;
+  width: 100%;
+  border-bottom: 2px solid #0076e8;
+  line-height: 180%;
+  z-index: 1;
+  transition: color 0.3s;
+}
+.link-animation::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0px;
+  background-color: #0076e8;
+  z-index: -1;
+  transition: height 0.3s;
+}
+.link-animation:hover {
+  color: #ffffff;
+}
+.link-animation:hover::before {
+  height: 100%;
+}
+
 @media (min-width: 772px) {
   .section {
     padding: 5em 0em;
@@ -226,10 +255,82 @@ body {
   width: 100%;
   max-width: 500px;
 }
-.future-box img {
-  height: auto;
+
+.acordeon {
+  margin-top: 2em;
+}
+.acordeon-section {
+  background-color: #ffffff;
+  margin-bottom: 0.4em;
+  border: 1px solid #d8d8d8;
+  border-radius: 8px;
+}
+.acordeon-section__btn {
+  font-size: 1.5rem;
+  padding: 1em;
+  width: 100%;
+  background: none;
+  border: none;
+  color: #0076e8;
+  font-size: 1.5rem;
+  text-align: left;
+  line-height: 160%;
+  cursor: pointer;
+}
+.acordeon-section__btn .fa-solid {
+  margin-right: 0.6em;
+  padding: 0.1em;
+  font-size: 20px;
+}
+.acordeon-section__btn .fa-minus {
+  display: none;
+}
+.acordeon-section__hidden-text {
+  font-size: 1.5rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s;
+}
+.acordeon-section__hidden-text p {
+  padding: 0 2em;
+  margin-bottom: 1em;
+  line-height: 180%;
+}
+.acordeon-section__hidden-text p:first-child {
+  padding-top: 1em;
+}
+.acordeon-section__hidden-text p:last-child {
+  padding-bottom: 1em;
+}
+.acordeon-section__hidden-text p span {
+  font-weight: 700;
+}
+.acordeon-section .fa-hide {
+  display: none;
+}
+.acordeon-section .fa-show {
+  display: block;
+}
+.acordeon-section .hidden-text-show {
+  background-color: #fff;
 }
 
+@media (min-width: 370px) {
+  .acordeon-section__btn {
+    font-size: 1.6rem;
+  }
+  .acordeon-section__hidden-text {
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 768px) {
+  .acordeon-section__btn {
+    font-size: 1.8rem;
+  }
+  .acordeon-section__hidden-text {
+    font-size: 1.8rem;
+  }
+}
 @media (min-width: 992px) {
   .nav__logo img {
     height: 40px;
@@ -282,8 +383,7 @@ body {
     font-weight: 700;
   }
   .future-box__img {
-    margin-top: 0em;
-    margin-right: 5em;
+    margin: 0 5em 0 0;
     order: 1;
     max-width: 400px;
   }
