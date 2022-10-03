@@ -12,11 +12,16 @@
 html {
 	font-size: 62.5%;
 	scroll-behavior: smooth;
+	scroll-padding: 5em;
 }
 
 body {
 	font-size: 1.8rem;
 	font-family: sans-serif;
+}
+
+.hide-text-accordeon {
+	max-height: 0;
 }
 
 .nav {
@@ -228,15 +233,12 @@ body {
 				padding: 0.1em;
 				font-size: 20px;
 			}
-			.fa-minus {
-				display: none;
-			}
 		}
 		&__hidden-text {
 			font-size: 1.5rem;
-			max-height: 0;
 			overflow: hidden;
-			transition: max-height 0.3s;
+			transition: max-height 0.4s;
+			max-height: 0;
 			p {
 				padding: 0 2em;
 				margin-bottom: 1em;
@@ -255,16 +257,14 @@ body {
 		.fa-hide {
 			display: none;
 		}
-		.fa-show {
-			display: block;
-		}
-		.hidden-text-show {
-			background-color: #fff;
+		.button-active {
+			background-color: colors.$light-white;
 		}
 	}
 }
 
 .courses {
+	padding-bottom: 0;
 	&__nav {
 		display: flex;
 		flex-direction: column;
@@ -356,7 +356,6 @@ body {
 }
 
 .community {
-	padding-bottom: 3em;
 	&-text {
 		margin: 2em 0 3em;
 		p {
@@ -592,18 +591,18 @@ body {
 		font-weight: 200;
 		color: colors.$privacy-politycy;
 		line-height: 160%;
-		a{
+		a {
 			text-decoration: none;
 			color: colors.$privacy-politycy-link;
 		}
 	}
 }
 
-.footer{
+.footer {
 	border-top: 1px solid colors.$gray;
 	text-align: center;
 	font-size: 2rem;
-	p{
+	p {
 		padding: 2em;
 		line-height: 160%;
 	}

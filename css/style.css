@@ -244,11 +244,16 @@
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+  scroll-padding: 5em;
 }
 
 body {
   font-size: 1.8rem;
   font-family: sans-serif;
+}
+
+.hide-text-accordeon {
+  max-height: 0;
 }
 
 .nav {
@@ -453,14 +458,11 @@ body {
   padding: 0.1em;
   font-size: 20px;
 }
-.acordeon-section__btn .fa-minus {
-  display: none;
-}
 .acordeon-section__hidden-text {
   font-size: 1.5rem;
-  max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s;
+  transition: max-height 0.4s;
+  max-height: 0;
 }
 .acordeon-section__hidden-text p {
   padding: 0 2em;
@@ -479,13 +481,13 @@ body {
 .acordeon-section .fa-hide {
   display: none;
 }
-.acordeon-section .fa-show {
-  display: block;
-}
-.acordeon-section .hidden-text-show {
-  background-color: #fff;
+.acordeon-section .button-active {
+  background-color: #f8f8f8;
 }
 
+.courses {
+  padding-bottom: 0;
+}
 .courses__nav {
   display: flex;
   flex-direction: column;
@@ -572,9 +574,6 @@ body {
   color: #d8d8d8;
 }
 
-.community {
-  padding-bottom: 3em;
-}
 .community-text {
   margin: 2em 0 3em;
 }
