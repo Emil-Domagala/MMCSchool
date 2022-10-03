@@ -19,10 +19,6 @@ body {
 	font-family: sans-serif;
 }
 
-.scroll-space {
-	height: 200vh;
-}
-
 .nav {
 	position: sticky;
 	top: 0;
@@ -436,6 +432,7 @@ body {
 		display: none;
 	}
 	&__other-courses {
+		margin: 2em 1em;
 		.section-title {
 			margin: 2em 0 1em 0;
 		}
@@ -449,7 +446,6 @@ body {
 		&-box {
 			margin: 1em 0;
 			padding: 2em;
-			width: 50%;
 			border-radius: 8px;
 			border: 1px solid colors.$light-blue;
 			width: 100%;
@@ -482,6 +478,134 @@ body {
 				}
 			}
 		}
+	}
+}
+
+.contact {
+	&-wrapper {
+		display: flex;
+		flex-direction: column;
+	}
+	&__info {
+		padding: 2em;
+		width: 100%;
+		background-color: colors.$light-blue;
+		color: colors.$pure-white;
+		border-radius: 4px;
+		line-height: 160%;
+		margin-bottom: 2em;
+		&--header {
+			text-transform: uppercase;
+			text-align: center;
+			font-size: 2.6rem;
+			font-weight: 700;
+			margin-bottom: 0.5em;
+		}
+		&--text {
+			margin-bottom: 2em;
+			p {
+				margin-bottom: 0.5em;
+			}
+		}
+		&--links {
+			&-link {
+				margin-bottom: 0.5em;
+				i {
+					width: 2.4rem;
+					font-size: 2rem;
+					vertical-align: middle;
+					text-align: center;
+				}
+				a {
+					margin-left: 0.5em;
+				}
+			}
+		}
+	}
+	&-form-wrapper {
+		display: flex;
+		flex-direction: column;
+		button {
+			width: 100%;
+			padding: 1em;
+		}
+	}
+	&-form {
+		&__box {
+			position: relative;
+			display: flex;
+			width: 100%;
+			margin-bottom: 2em;
+			input {
+				padding: 1em;
+				width: 100%;
+				border: 1px solid colors.$gray;
+				border-radius: 4px;
+				outline: none;
+				font-size: 1.4rem;
+			}
+			textarea {
+				resize: vertical;
+				padding: 1em;
+				width: 100%;
+				min-height: 100px;
+				height: 100px;
+				border: 1px solid colors.$gray;
+				border-radius: 4px;
+				outline: none;
+				font-size: 1.4rem;
+			}
+			label {
+				position: absolute;
+				top: 13px;
+				left: 15px;
+				color: colors.$gray;
+				z-index: 1;
+				transition: color 0.3s, transform 0.3s;
+			}
+			label::before,
+			textarea::before {
+				position: absolute;
+				content: "";
+				top: 0%;
+				left: -10px;
+				background-color: colors.$pure-white;
+				width: calc(100% + 20px);
+				height: 100%;
+				z-index: -1;
+			}
+
+			input:focus,
+			textarea:focus {
+				border-bottom: 2px solid colors.$light-blue;
+			}
+			input:focus + label,
+			textarea:focus + label {
+				transform: translate(10px, -22px);
+				color: colors.$black;
+			}
+		}
+	}
+	.privacy-politycy {
+		margin-top: 2em;
+		font-size: 1.6rem;
+		font-weight: 200;
+		color: colors.$privacy-politycy;
+		line-height: 160%;
+		a{
+			text-decoration: none;
+			color: colors.$privacy-politycy-link;
+		}
+	}
+}
+
+.footer{
+	border-top: 1px solid colors.$gray;
+	text-align: center;
+	font-size: 2rem;
+	p{
+		padding: 2em;
+		line-height: 160%;
 	}
 }
 
@@ -656,6 +780,20 @@ body {
 				margin: 0;
 			}
 		}
+		&__other-courses {
+			&-boxes {
+				flex-direction: row;
+			}
+			&-box {
+				width: 100%;
+				&:first-child {
+					margin-right: 0.5em;
+				}
+				&:last-child {
+					margin-left: 0.5em;
+				}
+			}
+		}
 	}
 }
 
@@ -727,6 +865,36 @@ body {
 		&-timeline {
 			&__wrapper {
 				margin: 0;
+			}
+		}
+	}
+}
+
+@media (min-width: 1150px) {
+	.contact {
+		&-wrapper {
+			flex-direction: row;
+			height: 100%;
+		}
+		&__info {
+			width: 30%;
+			margin-bottom: 0em;
+			margin-right: 2em;
+			font-size: 1.9rem;
+			&--header {
+				margin-bottom: 0.8em;
+			}
+		}
+		&-form-wrapper {
+			width: 70%;
+			button {
+				font-size: 1.6rem;
+				margin: 0;
+			}
+		}
+		&-form {
+			&__box {
+				margin-bottom: 1.6em;
 			}
 		}
 	}
