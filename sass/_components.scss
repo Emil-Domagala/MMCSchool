@@ -23,9 +23,24 @@
 	margin-bottom: 0.8em;
 	font-weight: 200;
 	font-size: 2.8rem;
+	line-height: 160%;
 	text-transform: uppercase;
 	color: colors.$light-blue;
 	border-left: 5px solid colors.$light-blue;
+	span {
+		font-weight: 700;
+	}
+}
+.mail-title {
+	display: block;
+	padding-left: 0.5em;
+	margin-bottom: 0.8em;
+	font-weight: 200;
+	font-size: 2.8rem;
+	text-transform: uppercase;
+	color: colors.$pure-white;
+	border-left: 5px solid colors.$pure-white;
+	line-height: 160%;
 	span {
 		font-weight: 700;
 	}
@@ -60,6 +75,118 @@
 	}
 }
 
+.btn-special-animation {
+	position: relative;
+	margin: 0.2em 0.5em 0.2em 0;
+	padding: 0.5em 1em;
+	text-align: center;
+	border-radius: 8px;
+	border: 1px solid colors.$gray;
+	font-size: 1.8rem;
+	cursor: pointer;
+	z-index: 1;
+	overflow: hidden;
+	&::before {
+		position: absolute;
+		content: "";
+		bottom: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background-color: colors.$gray;
+		transform-origin: right;
+		transition: transform 0.3s;
+		z-index: -1;
+		transform: scaleX(0);
+	}
+	&:hover::before {
+		transform: scaleX(1);
+		transform-origin: left;
+	}
+}
+
+.btn-special-animation-active {
+	position: relative;
+	margin: 0.2em 0.5em 0.2em 0;
+	padding: 0.5em 1em;
+	text-align: center;
+	border-radius: 8px;
+	border: 1px solid colors.$gray;
+	background-color: colors.$light-blue;
+	color: colors.$pure-white;
+	font-size: 1.8rem;
+	cursor: pointer;
+	z-index: 1;
+	overflow: hidden;
+	&::before {
+		position: absolute;
+		content: "";
+		bottom: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background-color: colors.$dark-blue;
+		transform-origin: right;
+		transition: transform 0.3s;
+		z-index: -1;
+		transform: scaleX(0);
+	}
+	&:hover::before {
+		transform: scaleX(1);
+		transform-origin: left;
+	}
+}
+
+.courses__list {
+	text-align: center;
+	.courses__link {
+		display: block;
+		text-decoration: none;
+		margin-bottom: 2em;
+		.courses__option {
+			&--img {
+				width: 100%;
+				max-width: 300px;
+				border-radius: 4px;
+				transition: transform 0.3s;
+				height: auto;
+			}
+			&--name {
+				line-height: 160%;
+				font-size: 1.6rem;
+				color: colors.$light-blue;
+			}
+		}
+		&:hover {
+			.courses__option {
+				&--img {
+					transform: scale(0.9);
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 576px) {
+	.courses__list {
+		display: flex;
+		flex-wrap: wrap;
+		.courses__link {
+			margin: 0 0.5em 1em 0;
+			width: 45%;
+		}
+	}
+}
+
+@media (max-width: 772px) {
+	.btn-special-animation {
+		width: 100%;
+	}
+	.btn-special-animation-active {
+		width: 100%;
+	}
+}
+
 @media (min-width: 772px) {
 	.section {
 		padding: 5em 0em;
@@ -69,5 +196,24 @@
 @media (min-width: 992px) {
 	.section-title {
 		font-size: 3.6rem;
+	}
+	.section-title {
+		font-size: 3.6rem;
+	}
+	.courses__list {
+		.courses__link {
+			width: 30%;
+		}
+	}
+	.mail-title {
+		font-size: 3.2rem;
+	}
+}
+
+@media (min-width: 1200px) {
+	.courses__list {
+		.courses__link {
+			width: 22%;
+		}
 	}
 }

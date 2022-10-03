@@ -7,6 +7,7 @@ const acoSecText = document.querySelectorAll(".acordeon-section__hidden-text");
 //do moich opcji
 // const acoSecBtn = document.querySelectorAll(".acordeon-section__btn");
 
+
 function showMenu() {
 	navWrapper.classList.toggle("nav__wrapper--active");
 }
