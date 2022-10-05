@@ -10,13 +10,19 @@ const acc = document.querySelectorAll(".acordeon-section__btn");
 let section = document.querySelectorAll("section");
 let navItem = document.querySelectorAll(".nav__item");
 //Filter courses
-let coursesBtn = document.querySelectorAll(".courses__nav--btn");
-let coursesBtnv2 = document.querySelectorAll(".btn-special-animation");
+const courseBtnAll = document.querySelector(".courses__nav--btn-all");
+const courseBtnHTML = document.querySelector(".courses__nav--btn-html");
+const courseBtnJS = document.querySelector(".courses__nav--btn-js");
+const courseBtnFree = document.querySelector(".courses__nav--btn-free");
+const courseHTML = document.querySelector("#courses__htmlAcss");
+const courseJS = document.querySelector("#courses__js");
+const courseFree = document.querySelector("#courses__free");
 
+
+//show menu
 function showMenu() {
 	navWrapper.classList.toggle("nav__wrapper--active");
 }
-
 
 // const coursesFilter = () => {
 // 	coursesBtn.classList.toggle("btn-special-animation-active");
@@ -74,5 +80,48 @@ window.onscroll = () => {
 	});
 };
 
-navBtn.addEventListener("click", showMenu);
+//Filter courses
 
+function allBtn() {
+	courseBtnAll.classList.add("btn-special-animation-active");
+	courseBtnHTML.classList.remove("btn-special-animation-active");
+	courseBtnJS.classList.remove("btn-special-animation-active");
+	courseBtnFree.classList.remove("btn-special-animation-active");
+	courseHTML.classList.remove("hide");
+	courseJS.classList.remove("hide");
+	courseFree.classList.remove("hide");
+}
+function htmlBtn() {
+	courseBtnAll.classList.remove("btn-special-animation-active");
+	courseBtnHTML.classList.add("btn-special-animation-active");
+	courseBtnJS.classList.remove("btn-special-animation-active");
+	courseBtnFree.classList.remove("btn-special-animation-active");
+	courseHTML.classList.remove("hide");
+	courseJS.classList.add("hide");
+	courseFree.classList.add("hide");
+}
+function jsBtn() {
+	courseBtnAll.classList.remove("btn-special-animation-active");
+	courseBtnHTML.classList.remove("btn-special-animation-active");
+	courseBtnJS.classList.add("btn-special-animation-active");
+	courseBtnFree.classList.remove("btn-special-animation-active");
+	courseHTML.classList.add("hide");
+	courseJS.classList.remove("hide");
+	courseFree.classList.add("hide");
+}
+function freeBtn() {
+	courseBtnAll.classList.remove("btn-special-animation-active");
+	courseBtnHTML.classList.remove("btn-special-animation-active");
+	courseBtnJS.classList.remove("btn-special-animation-active");
+	courseBtnFree.classList.add("btn-special-animation-active");
+	courseHTML.classList.add("hide");
+	courseJS.classList.add("hide");
+	courseFree.classList.remove("hide");
+}
+
+
+navBtn.addEventListener("click", showMenu);
+courseBtnAll.addEventListener("click", allBtn);
+courseBtnHTML.addEventListener("click", htmlBtn);
+courseBtnJS.addEventListener("click", jsBtn);
+courseBtnFree.addEventListener("click", freeBtn);

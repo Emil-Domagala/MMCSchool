@@ -24,6 +24,10 @@ body {
 	max-height: 0;
 }
 
+.hide {
+	display: none;
+}
+
 .nav {
 	position: sticky;
 	top: 0;
@@ -255,9 +259,6 @@ body {
 					font-weight: 700;
 				}
 			}
-		}
-		.fa-hide {
-			display: none;
 		}
 		.button-active {
 			background-color: colors.$light-white;

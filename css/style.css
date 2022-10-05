@@ -256,6 +256,10 @@ body {
   max-height: 0;
 }
 
+.hide {
+  display: none;
+}
+
 .nav {
   position: -webkit-sticky;
   position: sticky;
@@ -480,9 +484,6 @@ body {
 }
 .acordeon-section__hidden-text p span {
   font-weight: 700;
-}
-.acordeon-section .fa-hide {
-  display: none;
 }
 .acordeon-section .button-active {
   background-color: #f8f8f8;
