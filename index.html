@@ -26,6 +26,12 @@
 					</button>
 					<div class="nav__wrapper">
 						<div class="nav__items">
+							<a href="#future" style="display: none" class="nav__item"
+								>Przyszłośc</a
+							>
+							<a href="#about-us" style="display: none" class="nav__item"
+								>O Nas</a
+							>
 							<a href="#courses" class="nav__item">Kursy</a>
 							<a href="#community" class="nav__item">Społeczność</a>
 							<a href="#map" class="nav__item">Mapa</a>
@@ -44,7 +50,7 @@
 			</div>
 		</header>
 		<main class="main">
-			<section class="future section white-section">
+			<section id="future" class="future section white-section">
 				<div class="wrapper">
 					<h2 class="section-title">zmień swoją <span>przyszłość</span></h2>
 					<div class="future-box">
@@ -68,7 +74,7 @@
 				</div>
 			</section>
 
-			<section class="about-us section light-section">
+			<section id="about-us" class="about-us section light-section">
 				<div class="wrapper">
 					<h2 class="section-title">co nas <span>wyróżnia?</span></h2>
 					<div class="acordeon">
@@ -131,7 +137,8 @@
 						<div class="acordeon-section">
 							<div class="acordeon-section__btn">
 								<i class="fa-solid fa-plus"></i
-								><i class="fa-solid fa-minus fa-hide"></i>Kursy tworzone z myślą o tobie
+								><i class="fa-solid fa-minus fa-hide"></i>Kursy tworzone z myślą
+								o tobie
 							</div>
 							<div class="acordeon-section__hidden-text hidden-text-hide">
 								<p>
@@ -154,8 +161,8 @@
 						<div class="acordeon-section">
 							<div class="acordeon-section__btn">
 								<i class="fa-solid fa-plus"></i
-								><i class="fa-solid fa-minus fa-hide"></i>Masz realny wpływ na nasze
-								kursy
+								><i class="fa-solid fa-minus fa-hide"></i>Masz realny wpływ na
+								nasze kursy
 							</div>
 							<div class="acordeon-section__hidden-text hidden-text-hide">
 								<p>
@@ -203,13 +210,23 @@
 					</p>
 					<div class="courses__wrapper">
 						<div class="courses__nav">
-							<button class="btn-special-animation">Wszystkie kursy</button>
-							<button class="btn-special-animation">HTML & CSS</button>
-							<button class="btn-special-animation">JavaScript</button>
-							<button class="btn-special-animation">Bezpłatne kursy</button>
+							<button
+								class="courses__nav--btn btn-special-animation btn-special-animation-active"
+							>
+								Wszystkie kursy
+							</button>
+							<button class="courses__nav--btn btn-special-animation">
+								HTML & CSS
+							</button>
+							<button class="courses__nav--btn btn-special-animation">
+								JavaScript
+							</button>
+							<button class="courses__nav--btn btn-special-animation">
+								Bezpłatne kursy
+							</button>
 						</div>
 					</div>
-					<div class="courses__html&css">
+					<div id="courses__html&css" class="courses__html&css">
 						<h3 class="courses--title">Kurs tworzenia stron www</h3>
 						<div class="courses__list">
 							<a href="#" class="courses__link">
@@ -274,7 +291,7 @@
 							</a>
 						</div>
 					</div>
-					<div class="courses__js">
+					<div id="courses__js" class="courses__js">
 						<h3 class="courses--title">kursy javascript</h3>
 						<div class="courses__list">
 							<a href="#" class="courses__link">
@@ -313,7 +330,7 @@
 							</a>
 						</div>
 					</div>
-					<div class="courses__free">
+					<div id="courses__free" class="courses__free">
 						<h3 class="courses--title">Bezpłatne kursy</h3>
 						<div class="courses__list">
 							<a href="#" class="courses__link">
@@ -368,7 +385,7 @@
 						>, które dla Ciebie przygotowaliśmy!
 					</p>
 				</div>
-				<div class="mail section">
+				<div id="mail" class="mail section">
 					<div class="wrapper">
 						<h3 class="mail-title">Newsletter</h3>
 						<p>

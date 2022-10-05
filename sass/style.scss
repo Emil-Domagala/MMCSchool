@@ -12,7 +12,7 @@
 html {
 	font-size: 62.5%;
 	scroll-behavior: smooth;
-	scroll-padding: 5em;
+	scroll-padding: 8em;
 }
 
 body {
@@ -133,6 +133,9 @@ body {
 		opacity: 1;
 		left: 0;
 	}
+	.nav__item--active {
+		color: colors.$light-blue;
+	}
 }
 
 .header {
@@ -154,7 +157,6 @@ body {
 		z-index: -1;
 	}
 	&__text {
-		// position: absolute;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
