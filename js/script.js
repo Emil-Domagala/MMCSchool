@@ -1,11 +1,10 @@
 //showMenu
 const navWrapper = document.querySelector(".nav__wrapper");
 const navBtn = document.querySelector(".burger-btn");
+//nav btn
+const navBtnHover = document.querySelector(".bourger-btn-hover");
 //Acordeon
 const acc = document.querySelectorAll(".acordeon-section__btn");
-// const plus = document.querySelectorAll(".fa-plus");
-// const minus = document.querySelectorAll(".fa-minus");
-// const faHide = document.querySelectorAll(".fa-hide");
 //scrollSpy
 let section = document.querySelectorAll("section");
 let navItem = document.querySelectorAll(".nav__item");
@@ -18,21 +17,14 @@ const courseHTML = document.querySelector("#courses__htmlAcss");
 const courseJS = document.querySelector("#courses__js");
 const courseFree = document.querySelector("#courses__free");
 
-
 //show menu
 function showMenu() {
 	navWrapper.classList.toggle("nav__wrapper--active");
 }
 
-// const coursesFilter = () => {
-// 	coursesBtn.classList.toggle("btn-special-animation-active");
-
-// 	coursesBtn.forEach((item) => {
-// 		item.addEventListener("click", () => {
-// 			coursesBtn.classList.remove("btn-special-animation-active");
-// 		});
-// 	});
-// };
+function navBtnAnimation() {
+	navBtn.classList.toggle("bourger-btn-hover");
+}
 
 //Acordeon
 
@@ -47,17 +39,12 @@ for (i = 0; i < acc.length; i++) {
 		} else {
 			panel.style.maxHeight = panel.scrollHeight + "px";
 		}
+		let plus = this.firstElementChild;
+		plus.classList.toggle("fa-hide");
+		let minus = this.lastElementChild;
+		minus.classList.toggle("fa-hide");
 	});
 }
-
-//kewin
-// acoSecBtn.forEach((item) => {
-// 	item.addEventListener("click", () => {
-// 		let acordeon = item.querySelector(".acordeon-section__hidden-text");
-// 		console.log(acordeon);
-// 		acordeon.classList.toggle("hide-text-accordeon");
-// 	});
-// });
 
 //ScrollSpy
 
@@ -119,8 +106,9 @@ function freeBtn() {
 	courseFree.classList.remove("hide");
 }
 
-
 navBtn.addEventListener("click", showMenu);
+navBtn.addEventListener("click", navBtnAnimation);
+
 courseBtnAll.addEventListener("click", allBtn);
 courseBtnHTML.addEventListener("click", htmlBtn);
 courseBtnJS.addEventListener("click", jsBtn);

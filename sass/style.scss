@@ -64,15 +64,18 @@ body {
 			height: 4px;
 			background-color: black;
 			border-radius: 4px;
-			transition: transform 0.3s 1s, bottom 0.3s 1s;
 		}
+		&__bars,
+		&__bars::after {
+			transition: transform 0.3s, bottom 0.3s;
+		}
+
 		&__bars::before {
-			transition: bottom 1s, opacity 1s;
+			transition: bottom 0.3s 0.3s, opacity 0.3s 0.3s;
 		}
 		&__bars {
 			bottom: 0px;
 			left: 0;
-			background-color: red;
 		}
 		&__bars::after {
 			content: "";
@@ -83,21 +86,25 @@ body {
 			content: "";
 			bottom: 20px;
 			left: 0;
-			background-color: pink;
 		}
-		&:hover {
-			.burger-btn__bars {
-				bottom: 10px;
-				transform: rotate(-45deg);
-			}
-			.burger-btn__bars::after {
-				transform: rotate(-90deg);
-				bottom: 0;
-			}
-			.burger-btn__bars::before {
-				opacity: 0;
-				bottom: 10px;
-			}
+	}
+	.bourger-btn-hover {
+		.burger-btn__bars,
+		.burger-btn__bars::after {
+			transition: transform 0.3s 0.3s, bottom 0.3s 0.3s;
+		}
+		.burger-btn__bars {
+			bottom: 10px;
+			transform: rotate(-45deg);
+		}
+		.burger-btn__bars::after {
+			transform: rotate(-90deg);
+			bottom: 0;
+		}
+		.burger-btn__bars::before {
+			opacity: 0;
+			bottom: 10px;
+			transition: bottom 0.3s, opacity 0.3s;
 		}
 	}
 	&__wrapper {
@@ -239,6 +246,9 @@ body {
 				padding: 0.1em;
 				font-size: 20px;
 			}
+			.fa-hide {
+				display: none;
+			}
 		}
 		&__hidden-text {
 			font-size: 1.5rem;
@@ -293,6 +303,7 @@ body {
 		line-height: 160%;
 	}
 	.mail {
+		position: relative;
 		background-color: colors.$light-blue;
 		color: colors.$pure-white;
 		p {
@@ -374,7 +385,7 @@ body {
 		margin: 1.5em 1em;
 		&--link {
 			display: block;
-			margin-bottom: 1em;
+			margin-bottom: 2em;
 		}
 		&--img {
 			display: block;
@@ -393,6 +404,11 @@ body {
 		&--li {
 			line-height: 160%;
 			margin-bottom: 0.6em;
+		}
+	}
+	&__box-yt {
+		.community__box--link {
+			margin-bottom: 1em;
 		}
 	}
 }

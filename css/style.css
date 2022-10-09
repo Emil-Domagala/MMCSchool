@@ -295,15 +295,16 @@ body {
   height: 4px;
   background-color: black;
   border-radius: 4px;
-  transition: transform 0.3s 1s, bottom 0.3s 1s;
+}
+.nav .burger-btn__bars, .nav .burger-btn__bars::after {
+  transition: transform 0.3s, bottom 0.3s;
 }
 .nav .burger-btn__bars::before {
-  transition: bottom 1s, opacity 1s;
+  transition: bottom 0.3s 0.3s, opacity 0.3s 0.3s;
 }
 .nav .burger-btn__bars {
   bottom: 0px;
   left: 0;
-  background-color: red;
 }
 .nav .burger-btn__bars::after {
   content: "";
@@ -314,19 +315,23 @@ body {
   content: "";
   bottom: 20px;
   left: 0;
-  background-color: pink;
 }
-.nav .burger-btn:hover .burger-btn__bars {
+.nav .bourger-btn-hover .burger-btn__bars,
+.nav .bourger-btn-hover .burger-btn__bars::after {
+  transition: transform 0.3s 0.3s, bottom 0.3s 0.3s;
+}
+.nav .bourger-btn-hover .burger-btn__bars {
   bottom: 10px;
   transform: rotate(-45deg);
 }
-.nav .burger-btn:hover .burger-btn__bars::after {
+.nav .bourger-btn-hover .burger-btn__bars::after {
   transform: rotate(-90deg);
   bottom: 0;
 }
-.nav .burger-btn:hover .burger-btn__bars::before {
+.nav .bourger-btn-hover .burger-btn__bars::before {
   opacity: 0;
   bottom: 10px;
+  transition: bottom 0.3s, opacity 0.3s;
 }
 .nav__wrapper {
   position: fixed;
@@ -465,6 +470,9 @@ body {
   padding: 0.1em;
   font-size: 20px;
 }
+.acordeon-section__btn .fa-hide {
+  display: none;
+}
 .acordeon-section__hidden-text {
   font-size: 1.5rem;
   overflow: hidden;
@@ -516,6 +524,7 @@ body {
   line-height: 160%;
 }
 .courses .mail {
+  position: relative;
   background-color: #0076e8;
   color: #ffffff;
 }
@@ -594,7 +603,7 @@ body {
 }
 .community__box--link {
   display: block;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 .community__box--img {
   display: block;
@@ -613,6 +622,9 @@ body {
 .community__box--li {
   line-height: 160%;
   margin-bottom: 0.6em;
+}
+.community__box-yt .community__box--link {
+  margin-bottom: 1em;
 }
 
 .map__text {
