@@ -28,23 +28,36 @@ function navBtnAnimation() {
 
 //Acordeon
 
-let i;
-
-for (i = 0; i < acc.length; i++) {
-	acc[i].addEventListener("click", function () {
-		this.classList.toggle("button-active");
-		let panel = this.nextElementSibling;
-		if (panel.style.maxHeight) {
-			panel.style.maxHeight = null;
-		} else {
-			panel.style.maxHeight = panel.scrollHeight + "px";
-		}
-		let plus = this.firstElementChild;
-		plus.classList.toggle("fa-hide");
-		let minus = this.lastElementChild;
-		minus.classList.toggle("fa-hide");
+const callEvent = (els) => {
+	els.forEach((el) => {
+		el.addEventListener("click", (e) => {
+			el.classList.toggle("button-active");
+			let panel = el.nextElementSibling;
+			if (panel.style.maxHeight) {
+				panel.style.maxHeight = null;
+			} else {
+				panel.style.maxHeight = panel.scrollHeight + "px";
+			}
+			let plus = el.firstElementChild;
+			plus.classList.toggle("fa-hide");
+			let minus = el.lastElementChild;
+			minus.classList.toggle("fa-hide");
+			els.forEach((lm) => {
+				// lm !== el;
+				if (lm !== el) {
+					lm.classList.remove("button-active");
+					let panel = lm.nextElementSibling;
+					panel.style.maxHeight = null;
+					let plus = lm.firstElementChild;
+					plus.classList.remove("fa-hide");
+					let minus = lm.lastElementChild;
+					minus.classList.add("fa-hide");
+				}
+			});
+		});
 	});
-}
+};
+callEvent(acc);
 
 //ScrollSpy
 
